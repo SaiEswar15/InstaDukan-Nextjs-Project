@@ -1,0 +1,36 @@
+.con1{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display : flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.con1-button{
+    width : 50%;
+}
+
+.form-details
+{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    
+}
+
+.gender {
+    font-size: 10px;
+}
+
+/* .title{
+    background-color: aqua;
+} */
+
+.cards{
+    /* background-color: blue; */
+    display: grid;
+    flex-direction: row;
+    justify-content: center;
+}
+
+

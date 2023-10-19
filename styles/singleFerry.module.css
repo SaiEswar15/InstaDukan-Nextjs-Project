@@ -1,0 +1,161 @@
+
+
+.product_page_con{
+    
+    
+    /* padding-top: 7rem; */
+    background-color: white;
+    display : grid;
+    grid-template-columns: 1fr 2fr;
+    gap : 10px;
+}
+
+.product_image_con{
+    
+    /* width : 1fr; */
+    height : 18rem;
+    /* background-color: rgb(241, 241, 241); */
+    
+    
+}
+
+
+
+.image_holder{
+    height : 15rem;
+    
+    
+    
+    display : flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+}
+
+.product_picture{
+    width : 250px;
+    
+    
+    
+}
+
+.image_below_buttons{
+    /* height : 5rem; */
+    
+    
+    display : flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.addtocart_btn
+{
+    background-color: orangered;
+    padding: 10px 20px;
+    margin-right: 10px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    height : 4rem;
+    width : 6rem;
+
+}
+
+.addtowishlist_btn{
+    background-color: orange;
+    padding: 10px 20px;
+    font-size: 0.8rem;
+    margin-right: 10px;
+    font-weight: bold;
+    height : 4rem;
+    width : 6rem;
+}
+
+.buyNow_btn
+{
+    background-color: orangered;
+    padding: 10px 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    height : 4rem;
+    width : 6rem;
+}
+
+.product_details_con{
+   
+    /* height : 80vh; */
+    /* background-color: rgb(241, 241, 241); */
+    padding-bottom: 1rem;
+    border-left: 1px solid rgb(225, 225, 225);
+    
+}
+
+.product_details_main{
+   
+    /* background-color: rgb(241, 241, 241); */
+    margin-left: 1rem;
+    margin-top: 1rem;
+    
+}
+
+.product_nav{
+    color : blue;
+    margin-bottom: 10px;
+}
+
+.product_title{
+    color : orangered;
+    font-size: 20px;
+    font-weight: bolder;
+    margin-bottom: 10px;
+}
+
+.product_cat{
+    margin-bottom: 10px;
+}
+.product_cat_span{
+    color: blue;
+    
+}
+
+.product_rating{
+    margin-top: 10px;
+    
+}
+
+.product_rating_rate{
+    font-size: 20px;
+    padding-bottom: 15px;
+    background-color: green;
+    padding: 5px;
+    display : inline;
+    color: white;
+}
+
+.starIcon{
+    width : 0.5px;
+    height : 0.5px;
+    margin-top: 1px;
+    /* background_color: blue; */
+}
+
+.product_price_para{
+    margin-top: 10px;
+    
+}
+.product_price{
+    font-size: 25px;
+}
+
+.strike {
+    text-decoration: line-through;
+}
+
+.off {
+    padding-left : 10px;
+}
+
+
+
+
