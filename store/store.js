@@ -3,39 +3,42 @@ import { observable, action } from 'mobx';
 const store = observable({
 
     cartData : [],
-    count : 0,
-    isModalOpen : false,
-    passengerDetailsModel : false,
-    summaryData : [],
-    summaryModalOpen : false,
+    userData : [],
+    passengerModal : false,
+    passengerDetailsModal : false,
+    summaryModal : false,
+    paymentModal : false,
     
 
 
-    increment : action(function()
-    {
-        store.count++;
+    setPassengerModal : action(function (el) {
+        
+        store.passengerModal = el;
     }),
-
-    setIsModalOpen : action(function (el) {
-        store.isModalOpen = el;
-    }),
-
-    setpassengerDetailsModel : action(function (el) {
-        store.passengerDetailsModel = el;
-    }),
-    
-    addToCart: action(function (el) {
-        console.log(el, "object enetered")
-        this.cartData.push(el);
-    }),
-
-    addToSummary :action(function (el) {
-        console.log(el, "object enetered")
-        this.summaryData.push(el);
+    setpassengerDetailsModal : action(function (el) {
+        store.passengerDetailsModal = el;
     }),
     setSummaryOpenModal : action(function (el) {
-        store.summaryModalOpen = el;
-    })
+        console.log("enterd", el, "element")
+
+        store.summaryModal = el;
+    }),
+    setPaymentModal : action(function (el) {
+        store.paymentModal = el;
+    }),
+
+
+    
+    addToCart: action(function (el) {
+        // console.log(el, "object enetered")
+        this.cartData.push(el);
+    }),
+    addToUserData :action(function (el) {
+        // console.log(el, "object enetered")
+        this.userData.push(el);
+    }),
+    
+
 
 });
 

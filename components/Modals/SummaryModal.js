@@ -1,32 +1,51 @@
 import React from 'react'
 import { observer } from 'mobx-react-lite';
+import store from '../../store/store';
+import { Modal } from 'antd';
 
 function SummaryModal() {
 
+    const ferry = store.cartData;
+    const userData = store.userData;
+
     const handleOk = () => {
-        //summary should open
-        // store.setSummaryOpenModal(true);
-        // store.setIsModalOpen(false);
+        
+        store.setSummaryOpenModal(false);
+        store.setPaymentModal(true);
     };
 
     const handleCancel = () => {
-        // store.setIsModalOpen(false);
+        
+        store.setSummaryOpenModal(false);
     };
     return (
-        <>
-            {/* <Button type="primary" onClick={showModal}>Book your Tickets</Button> */}
+        <Modal
+            title="Summary Details"
+            className='summary-modal'
+            open={store.summaryModal}
+            onOk={handleOk}
+            okText="Confirm Booking"
+            onCancel={handleCancel}>
 
-            <Modal
-                title="Summary Details"
-                className='modal'
-                open={store.summaryModalOpen}
-                onOk={handleOk}
-                okText="Proceed To Pay"
-                onCancel={handleCancel}>
+            <div>
+                <img src = {ferry.image}/>
+                <p>{ferry.title}</p>
+                <p>Ticket Price : {ferry.price}</p>
+                <p>No of Passengers : {userData.length}</p>
+                <p>Grand Total : {ferry.price * userData.length}</p>
 
-                
-            </Modal>
-        </>
+                <p>Passenger List</p>
+                {userData.map((el,index)=>{
+                    return <div key = {index}>
+                        <p>{el.name}</p>
+                        <p>{el.age}</p>
+                        <p>{el.gender}</p>
+                    </div>
+                })}
+
+            </div>
+        </Modal>
+        
     )
 }
 

@@ -8,9 +8,9 @@ function FerryList({ ferries }) {
 
     const router = useRouter();
 
-    const handleGoToHome = () => {
-        router.push('/'); 
-      };
+    // const handleGoToHome = () => {
+    //     router.push('/'); 
+    //   };
 
     const gridStyle = {
         width: '50%',
@@ -19,11 +19,11 @@ function FerryList({ ferries }) {
     return (
         <div>
             
-            <Card title="Ferries Today" onClick={handleGoToHome}>
+            <Card title="Ferries Today">
                 {ferries && ferries.map((el) => {
                     return <>
                     <div key={el.id}>
-                        <Card.Grid style={gridStyle}  className={styles.innercard}>
+                        <Card.Grid style={gridStyle} key={el.id} className={styles.innercard}>
 
                             <Link href={`ferries/${el.id}`} className={styles.link}>
                                 <div className={styles.product_con}  >

@@ -18,7 +18,7 @@ function DetailsModal() {
     const { Option } = Select;
 
     const handleCancel = () => {
-        store.setpassengerDetailsModel(false);
+        store.setpassengerDetailsModal(false);
     };
 
     const onFinish = (values) => {
@@ -37,10 +37,9 @@ function DetailsModal() {
 
         form.resetFields();
 
-        store.addToSummary(formData);
-
-        store.setpassengerDetailsModel(false);
-        store.setIsModalOpen(true);
+        store.addToUserData(formData);
+        store.setpassengerDetailsModal(false);
+        store.setPassengerModal(true);
     };
 
     const handleReset = () => {
@@ -51,7 +50,7 @@ function DetailsModal() {
         <>
             <Modal
                 title="Fill Passenger Details"
-                open={store.passengerDetailsModel}
+                open={store.passengerDetailsModal}
                 style={{ top: '30px' }}
                 footer={null}
                 onCancel={handleCancel}>
@@ -71,7 +70,7 @@ function DetailsModal() {
                         <Form.Item
 
                             name="name"
-                            rules={[{  message: 'Please enter your name' }]}
+                            rules={[{ required : true, message: 'Please enter your name' }]}
                         >
                             <Input placeholder="Enter your name" />
                         </Form.Item>
@@ -79,7 +78,7 @@ function DetailsModal() {
                         <Form.Item
 
                             name="email"
-                            rules={[{  message: 'Please enter your email' }]}
+                            rules={[{ required : true, message: 'Please enter your email' }]}
                         >
                             <Input type="email" placeholder="Enter your email" />
                         </Form.Item>
@@ -87,7 +86,7 @@ function DetailsModal() {
                         <Form.Item
 
                             name="age"
-                            rules={[{  message: 'Please enter your age' }]}
+                            rules={[{ required : true, message: 'Please enter your age' }]}
                         >
                             <Input type="number" placeholder="Enter your age" />
                         </Form.Item>
@@ -96,7 +95,7 @@ function DetailsModal() {
                         <Form.Item
 
                             name="gender"
-                            rules={[{  message: 'Please select your gender' }]}
+                            rules={[{ required : true, message: 'Please select your gender' }]}
                         >
                             <Select placeholder = "Select your gender">
                                 <Option value="male">Male</Option>
@@ -108,7 +107,7 @@ function DetailsModal() {
                         <Form.Item
 
                             name="nationality"
-                            rules={[{  message: 'Please enter your nationality' }]}
+                            rules={[{ required : true, message: 'Please enter your nationality' }]}
                         >
                             <Input placeholder="Enter your nationality" />
                         </Form.Item>
@@ -116,7 +115,7 @@ function DetailsModal() {
                         <Form.Item
 
                             name="passportNumber"
-                            rules={[{  message: 'Please enter your passport number' }]}
+                            rules={[{ required : true, message: 'Please enter your passport number' }]}
                         >
                             <Input placeholder="Enter your passport number" />
                         </Form.Item>
@@ -124,7 +123,7 @@ function DetailsModal() {
                         <Form.Item
 
                             name="dot"
-                            rules={[{ message: 'Please select your travel date' }]}
+                            rules={[{ required : true, message: 'Please select your travel date' }]}
                         >
                             <DatePicker style={{ width: '100%' }} placeholder="Select your travel date" />
                         </Form.Item>

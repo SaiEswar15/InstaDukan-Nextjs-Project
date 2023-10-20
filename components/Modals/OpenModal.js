@@ -3,36 +3,29 @@ import { Button, Modal } from 'antd';
 import store from '../../store/store';
 import { observer } from 'mobx-react-lite';
 
-function OpenModal({ferry}) {
-
-    function showModal() {
-        store.setIsModalOpen(true);
-        store.addToCart(ferry);
-    }
+function OpenModal() {
 
     const handleOk = () => {
         //summary should open
-        store.setIsModalOpen(false);
+        store.setPassengerModal(false);
         store.setSummaryOpenModal(true);
         
     };
 
     const handleCancel = () => {
-        store.setIsModalOpen(false);
+        store.setPassengerModal(false);
     };
 
     function addPassenger() {
-        store.setIsModalOpen(false);
-        store.setpassengerDetailsModel(true);
+        store.setPassengerModal(false);
+        store.setpassengerDetailsModal(true);
     }
     return (
         <>
-            <Button type="primary" onClick={showModal}>Book your Tickets</Button>
-
             <Modal
                 title="Passenger Details"
                 className='modal'
-                open={store.isModalOpen}
+                open={store.passengerModal}
                 onOk={handleOk}
                 okText="Book Tickets"
                 onCancel={handleCancel}>
