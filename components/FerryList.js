@@ -2,11 +2,11 @@ import React from 'react'
 import Link from "next/link";
 import { Button, Card } from 'antd';
 import styles from "../styles/ferries.module.css"
-import { useRouter } from 'next/router';
+// import { useRouter } from 'next/router';
 
 function FerryList({ ferries }) {
 
-    const router = useRouter();
+    // const router = useRouter();
 
     // const handleGoToHome = () => {
     //     router.push('/'); 
@@ -21,8 +21,7 @@ function FerryList({ ferries }) {
             
             <Card title="Ferries Today">
                 {ferries && ferries.map((el) => {
-                    return <>
-                    <div key={el.id}>
+                    return <div key={el.id}>
                         <Card.Grid style={gridStyle} key={el.id} className={styles.innercard}>
 
                             <Link href={`ferries/${el.id}`} className={styles.link}>
@@ -42,7 +41,7 @@ function FerryList({ ferries }) {
 
                         </Card.Grid>
                     </div>
-                    </>
+                    
 
                 })}
             </Card>

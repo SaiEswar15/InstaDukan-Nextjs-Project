@@ -6,6 +6,13 @@
     justify-content: center;
 }
 
+.con2{
+    
+    display : flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
 .con1-button{
     width : 50%;
 }
